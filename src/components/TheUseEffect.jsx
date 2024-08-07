@@ -1,63 +1,66 @@
 import React, { useState, useEffect } from 'react';
 
-const NotificationCount = () => {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    console.log("count: " + count);
-    document.title = `Notifications ${count}`;
-  }, [count]);
-
-  return (
-    <button
-      className="btn btn-primary btn-lg"
-      onClick={() => setCount(count + 1)}
-    >
-      {count}
-    </button>
-  );
-};
 
 const TheUseEffect = () => {
-  const [name, setName] = useState("bob");
+
   const [number, setNumber] = useState(0);
-  const [checked, setChecked] = useState(false);
 
-  useEffect(() => {
-    document.title = name;
-  }, [name]);
-
-  useEffect(() => {
+  const changeNumber = () => {
     document.title = number;
-  }, [number]);
+  };
+
+  // Utilisez useEffect pour exécuter changeNumber lorsque number change
+  useEffect(() => {
+    changeNumber();
+  }, [number]); // Dépendance : number
 
   return (
-    <div className="flex flex-col gap-4">
-      <input
-        className="input input-bordered"
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        className="input input-bordered"
-        type="number"
-        value={number}
-        onChange={(e) => setNumber(Number(e.target.value))} // Convertir en nombre
-      />
-      <label>
-        Show Notification
-      <input
-        className="checkbox-primary checkbox"
-        type="checkbox"
-        checked={checked}
-        onChange={(e) => setChecked(e.target.checked)}
-      />
-      {checked ? <NotificationCount /> : null}
-      </label>
+    <div>
+      <p>Number: {number}</p>
+      <button onClick={() => setNumber(number + 1)}>Increment</button>
     </div>
   );
 };
+
+
+//   const [number, setNumber] = useState(0);
+//   const [checked, setChecked] = useState(false);
+//   const [mousePosition, setMousePosition] = useState({
+//     x: 0,
+//     y: 0
+//   });
+
+//   useEffect(() =>{
+//     const onMouseMove = (e) => { 
+//         if (checked) {
+//             return;
+//         }
+//         setMousePosition({
+//             x: e.clientX,
+//             y: e.clientY
+//         })
+//     }
+//     document.addEventListener('mousemove', onMouseMove);
+//   }, [])
+
+
+//   return (
+//     <div className="flex flex-col gap-4">
+//       <label>
+//         Enable on mouse move
+//       <input
+//         className="checkbox-primary checkbox"
+//         type="checkbox"
+//         checked={checked}
+//         onChange={(e) => setChecked(e.target.checked)}
+//       />
+//       </label>
+//       <pre>
+//         {JSON.stringify(mousePosition, null, 2)}
+//       </pre>
+//     </div>
+//   );
+// };
 
 //  const TheUseEffect = () => {
 //     const [duration, setDuration] = useState(5);
