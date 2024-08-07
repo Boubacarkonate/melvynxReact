@@ -23,7 +23,7 @@ const Minuteur = () => {
 
     // Fonction pour démarrer le minuteur
     const startTimer = () => {
-        setIsRunning(true);
+        setIsRunning(true);  //le useState devient true
     };
 
     // Fonction pour arrêter le minuteur
@@ -33,7 +33,7 @@ const Minuteur = () => {
 
     // Fonction pour réinitialiser le minuteur
     const resetTimer = () => {
-        setIsRunning(false); // Corrige le problème où isRunning était initialisé à 0 au lieu de false
+        setIsRunning(false); // le useState est à false
         setCount(0); // Réinitialise le compteur à 0
     };
 
