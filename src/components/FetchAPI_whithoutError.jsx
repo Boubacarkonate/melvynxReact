@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function FetchAPI() {
+function FetchAPI_whithoutError() {
 
   const [data, setData] = useState(null);
 
@@ -48,4 +48,4 @@ null : Le deuxième argument de JSON.stringify est une fonction de remplacement 
   );
 }
 
-export default FetchAPI;
+export default FetchAPI_whithoutError;
