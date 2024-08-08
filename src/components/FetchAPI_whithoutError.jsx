@@ -30,6 +30,14 @@ function FetchAPI_whithoutError() {
 
     // Appel de la fonction fetchData. useEffect est utilisé pour exécuter la fonction fetchData lorsque le composant est monté
     fetchData();
+    console.log('composant monté');
+    
+         //nettoyage de l'effet
+
+    return () => {
+      console.log('Nettoyage de la requête réseau');
+    };
+
   }, []); // Le tableau de dépendances vide indique que l'effet s'exécute uniquement lors du montage du composant
 
   // Rendu du composant

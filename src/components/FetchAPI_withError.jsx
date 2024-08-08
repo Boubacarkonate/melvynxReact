@@ -25,10 +25,16 @@ const FetchAPI_withError = () => {
      };
  
      fetchData();
+
+     //nettoyage de l'effet
+     return () => {
+        console.log('Nettoyage de la requête réseau');
+      };
+
    }, []); // Tableau de dépendances vide pour exécuter l'effet une seule fois
  
    // Affichage des données, du chargement et des erreurs
-   if (loading) return <p>Chargement...</p>;
+   if (loading) return <span className="loading loading-spinner text-success"></span>;
    if (error) return <p>Erreur: {error.message}</p>;
  
    return (
