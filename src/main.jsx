@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import UseContext from './components/UseContext'
+import ThemeComponent from './components/theme/ThemeComponent'
 
 
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <UseContext/> 
+   <ThemeComponent/> 
   </React.StrictMode>,
 )
