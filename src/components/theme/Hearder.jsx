@@ -1,10 +1,14 @@
+import { useContext } from 'react'
 import Navbar from './Navbar'
+import ThemeContext from './ThemeContext'
 
 
 
 const Hearder = () => {
+  const theme = useContext(ThemeContext)
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+    <div style={{ backgroundColor: theme === "dark" ? "#333" : "#FFF", color: theme === "dark" ? "#FFF" : "#000" }}>
+      <h1>HEADER</h1>
      <Navbar />
     </div>
   )

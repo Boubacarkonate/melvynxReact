@@ -1,17 +1,22 @@
-import { useState } from "react";
 import Hearder from "./Hearder";
-import ThemContext from "./ThemContext";
+import { ThemeProvider } from "./ThemeContext";
+import Minuteur from "../Minuteur"
 
 
 const ThemeComponent = () => {
-    const [theme, setTheme] = useState('light'); // Gestion du thème (clair par défaut)
   return (
-    <ThemContext.Provider value={theme}>
+   <>
+   
+    <ThemeProvider>
+      <h1>theme 1</h1>
       <Hearder />
-      <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-        Toggle Theme
-      </button>
-    </ThemContext.Provider>
+    </ThemeProvider>
+    <ThemeProvider>
+      <h2>theme 2</h2>
+      <Hearder />
+    </ThemeProvider>
+  </>
+    
   )
 }
 

@@ -1,13 +1,15 @@
 import { useContext } from "react"
-import ThemContext from "./ThemContext"
+import ThemContext from "./ThemeContext"
 
 
 const Button = () => {
     const theme = useContext(ThemContext)
   return (
-    <button style={{ backgroundColor: theme === "dark" ? "#333" : "#FFF", color: theme === "dark" ? "#FFF" : "#000" }}>
-    Button Component
-  </button>
+    <div >
+      <h1>Bouton</h1>
+    <p>The current theme is: {theme}</p>
+    </div>
+
   )
 }
 
